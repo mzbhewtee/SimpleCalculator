@@ -15,8 +15,8 @@
 ### How to create your own calculator.exe file using the Cal and calculator file
 
 
-Create an executable jar with ECLIPSE
-.......................................................
+## Create an executable jar with ECLIPSE
+
 
 1. Choose a this repo after which you must have downloaded it.
 2. Right click on the project
