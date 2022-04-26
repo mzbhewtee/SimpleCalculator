@@ -12,7 +12,7 @@
 * Download the Calculator.exe file
 * Run it on your deskstop/computer
 
-## How to create your own calculator.exe file using the Cal and calculator file
+### How to create your own calculator.exe file using the Cal and calculator file
 
 
 Create an executable jar with ECLIPSE
