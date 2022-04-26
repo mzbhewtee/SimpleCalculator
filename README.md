@@ -15,7 +15,7 @@
 ## How to create your own calculator.exe file using the Cal and calculator file
 
 
-Create an executable jar with ECLIPSE :
+Create an executable jar with ECLIPSE
 .......................................................
 
 1. Choose a this repo after which you must have downloaded it.
@@ -58,3 +58,9 @@ Use Launch4j to create an .exe with custom icon
 7. At the top of window, click the Build Wrapper (gear icon)
 8. name and save the Lauch4j config file where you want
 9. Your application.exe should be saved to your output file location (no longer need previous files)
+
+
+After running, your calculator should look like this
+----------------------------------------------------
+
+![Screenshot (504)](https://user-images.githubusercontent.com/86835129/165236082-f07f92eb-4ef8-4605-8063-a5c957a5370e.png)
