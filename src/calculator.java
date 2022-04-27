@@ -1,5 +1,5 @@
+// Import necessary class/modules/methods
 import java.awt.EventQueue;
-
 import javax.swing.JFrame;
 import javax.swing.JTextField;
 import javax.swing.JButton;
@@ -12,9 +12,10 @@ import java.awt.Cursor;
 import java.awt.SystemColor;
 import javax.swing.JLabel;
 
-
+// Create the calculator class that will take all the elements to be used in building the calculator
 public class calculator {
 
+	// These elements are private because they are not needed anywhere else
 	private JFrame frame;
 	private JTextField textField;
 	private JButton btn8;
@@ -37,18 +38,18 @@ public class calculator {
 	private JButton btnPlus;
 	private JButton btnEqual;
 	private JButton btnAddInverse;
-	
-	Double first;
-	Double second;
-	Double result;
-	String operation;
-	String answer;
 	private JButton btn9;
 	private JButton btnSquared;
 	private JButton btnRoot;
 	private JButton btnC;
 	private JTextField show;
 
+	// Instantiate the operations, the inputs and answer(These are from the class Cal)
+	Double first;
+	Double second;
+	Double result;
+	String operation;
+	String answer;
 
 	/**
 	 * Launch the application.
@@ -95,10 +96,16 @@ public class calculator {
 		frame.getContentPane().add(textField);
 		textField.setColumns(10);
 		
+
+		// Add action Listener to all the buttons created
 		btn8 = new JButton("8");
 		btn8.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+
+				// Get the enetered number and store it in the variable, number
 				String number=textField.getText()+btn8.getText();
+
+				// Set the number to the field(Display section)
 				textField.setText(number);
 			}
 		});
@@ -108,10 +115,15 @@ public class calculator {
 		btn8.setBounds(77, 317, 71, 49);
 		frame.getContentPane().add(btn8);
 		
+		// Add action Listener to all the buttons created
 		btn7 = new JButton("7");
 		btn7.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+
+				// Get the enetered number and store it in the variable, number
 				String number=textField.getText()+btn7.getText();
+
+				// Set the number to the display field
 				textField.setText(number);
 			}
 		});
@@ -121,10 +133,14 @@ public class calculator {
 		btn7.setBounds(149, 317, 71, 49);
 		frame.getContentPane().add(btn7);
 		
+		// Add action Listener to all the buttons created
 		btn6 = new JButton("6");
 		btn6.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				// Get the enetered number and store it in the variable, number
 				String number=textField.getText()+btn6.getText();
+
+				// Set the number to the display field
 				textField.setText(number);
 			}
 		});
@@ -134,10 +150,15 @@ public class calculator {
 		btn6.setBounds(5, 368, 71, 49);
 		frame.getContentPane().add(btn6);
 		
+		// Add action Listener to all the buttons created
 		btn5 = new JButton("5");
 		btn5.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+
+				// Get the enetered number and store it in the variable, number
 				String number=textField.getText()+btn5.getText();
+				
+				// Set the number to the display field
 				textField.setText(number);
 			}
 		});
@@ -147,10 +168,15 @@ public class calculator {
 		btn5.setBounds(77, 368, 71, 49);
 		frame.getContentPane().add(btn5);
 		
+		// Add action Listener to all the buttons created
 		btn4 = new JButton("4");
 		btn4.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				// Get the enetered number and store it in the variable, number
+
 				String number=textField.getText()+btn4.getText();
+
+				// Set the number to the display field
 				textField.setText(number);
 			}
 		});
@@ -160,6 +186,7 @@ public class calculator {
 		btn4.setBounds(149, 368, 71, 49);
 		frame.getContentPane().add(btn4);
 		
+		// Add action Listener to all the buttons created
 		btn3 = new JButton("3");
 		btn3.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -173,6 +200,7 @@ public class calculator {
 		btn3.setBounds(5, 419, 71, 49);
 		frame.getContentPane().add(btn3);
 		
+		// Add action Listener to all the buttons created
 		btn2 = new JButton("2");
 		btn2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -186,6 +214,7 @@ public class calculator {
 		btn2.setBounds(77, 419, 71, 49);
 		frame.getContentPane().add(btn2);
 		
+		// Add action Listener to all the buttons created
 		btn1 = new JButton("1");
 		btn1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -199,14 +228,24 @@ public class calculator {
 		btn1.setBounds(149, 419, 71, 49);
 		frame.getContentPane().add(btn1);
 		
+		// Add action Listener to all the buttons created
 		btnBackSpace = new JButton("\uF0E7");
 		btnBackSpace.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+
+				// Set the backspace to nothing
 				String backspace = null;
+
+				// Check if the length it the length of the element in the display field is greater tahn zero
 				if (textField.getText().length()>0);
 				{
+					// Use the string builde method/function to get all the test in the display field
 					StringBuilder str=new StringBuilder(textField.getText());
+
+					// Delete the element from the last element to the first
 					str.deleteCharAt(textField.getText().length()-1);
+
+					// Apply recurssion to continue the loop as long as theres an element present
 					backspace=str.toString();
 					textField.setText(backspace);
 				}
@@ -218,6 +257,7 @@ public class calculator {
 		btnBackSpace.setBounds(221, 215, 71, 49);
 		frame.getContentPane().add(btnBackSpace);
 		
+		// Add action Listener to all the buttons created
 		btn0 = new JButton("0");
 		btn0.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -231,6 +271,7 @@ public class calculator {
 		btn0.setBounds(77, 470, 71, 49);
 		frame.getContentPane().add(btn0);
 		
+		// Add action Listener to all the buttons created
 		btnDot = new JButton(".");
 		btnDot.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -245,12 +286,19 @@ public class calculator {
 		btnDot.setBounds(149, 470, 71, 49);
 		frame.getContentPane().add(btnDot);
 		
+		// Add action Listener to all the buttons created
 		btnPercent = new JButton("%");
 		btnPercent.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+
+				// For this operation, get the first number then display it
 				first=Double.parseDouble(textField.getText());
+
+				// Set only the number to the big display
 				textField.setText("");
 				operation="%";
+
+				// Display the number to be used in calculation and the operation to the smaller field
 				show.setText(first+ " " +operation);
 			}
 		});
@@ -260,9 +308,12 @@ public class calculator {
 		btnPercent.setBounds(5, 215, 71, 49);
 		frame.getContentPane().add(btnPercent);
 		
+		// Add action Listener to all the buttons created
 		btnClear = new JButton("CE");
 		btnClear.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+
+				// Delete all the input in both the big and small display field
 				textField.setText(null);
 				show.setText(null);
 			}
@@ -273,6 +324,7 @@ public class calculator {
 		btnClear.setBounds(149, 215, 71, 49);
 		frame.getContentPane().add(btnClear);
 		
+		// Add action Listener to all the buttons created
 		btnDoubleZero = new JButton("00");
 		btnDoubleZero.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -286,12 +338,19 @@ public class calculator {
 		btnDoubleZero.setBounds(5, 470, 71, 49);
 		frame.getContentPane().add(btnDoubleZero);
 		
+		// Add action Listener to all the buttons created
 		btnDivide = new JButton("/");
 		btnDivide.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+
+				// For this operation, get the first number then display it
 				first=Double.parseDouble(textField.getText());
+
+				// Set only the number to the big display
 				textField.setText("");
 				operation="/";
+
+				// Display the number to be used in calculation and the operation to the smaller field
 				show.setText(first+ " " +operation);
 			}
 		});
@@ -301,6 +360,7 @@ public class calculator {
 		btnDivide.setBounds(221, 266, 71, 49);
 		frame.getContentPane().add(btnDivide);
 		
+		// Add action Listener to all the buttons created
 		btnMultiply = new JButton("x");
 		btnMultiply.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -317,6 +377,7 @@ public class calculator {
 		btnMultiply.setBounds(221, 317, 71, 49);
 		frame.getContentPane().add(btnMultiply);
 		
+		// Add action Listener to all the buttons created
 		btnMinus = new JButton("-");
 		btnMinus.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -332,6 +393,7 @@ public class calculator {
 		btnMinus.setBounds(221, 368, 71, 49);
 		frame.getContentPane().add(btnMinus);
 		
+		// Add action Listener to all the buttons created
 		btnPlus = new JButton("+");
 		btnPlus.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -347,14 +409,21 @@ public class calculator {
 		btnPlus.setBounds(221, 419, 71, 49);
 		frame.getContentPane().add(btnPlus);
 		
+		// Add action Listener to all the buttons created
 		btnEqual = new JButton("=");
 		btnEqual.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				String answer;
+				// String answer;
+
+				// Get the second input and display it to both the small and big display screen
 				second=Double.parseDouble(textField.getText());
 				show.setText(first+" "+operation+" "+ second+" =");
+
+				// If the operation is equal to the operation
 				if(operation=="+")
 				{
+
+					// Instantiate the Cal class, set the answer to 2 decimal place then display the answer on the big screen only
 					Cal calculate = new Cal();
 					Double result=calculate.add(first,second);
 					answer=String.format("%.2f",result);
@@ -398,13 +467,20 @@ public class calculator {
 		btnEqual.setBounds(221, 470, 71, 49);
 		frame.getContentPane().add(btnEqual);
 		
+		// Add action Listener to all the buttons created
 		btnAddInverse = new JButton("+/-");
 		btnAddInverse.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+
+				// For this operation, get the input first, display it, only on the big display field
 				first=Double.parseDouble(textField.getText());
 				operation="+/-";
+
+				// Call the Cal class, perform the operation
 				Cal calculate = new Cal();
 				Double result=calculate.addInverse(first);
+
+				// set the answer format to 2 decimal place, display it to the big field display only
 				answer=String.format("%.2f",result);
 				textField.setText(answer);
 			}
@@ -415,6 +491,7 @@ public class calculator {
 		btnAddInverse.setBounds(5, 266, 71, 49);
 		frame.getContentPane().add(btnAddInverse);
 		
+		// Add action Listener to all the buttons created
 		btn9 = new JButton("9");
 		btn9.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -428,6 +505,7 @@ public class calculator {
 		btn9.setBounds(5, 317, 71, 49);
 		frame.getContentPane().add(btn9);
 		
+		// Add action Listener to all the buttons created
 		btnSquared = new JButton("^2");
 		btnSquared.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -445,6 +523,7 @@ public class calculator {
 		btnSquared.setBounds(77, 266, 71, 49);
 		frame.getContentPane().add(btnSquared);
 		
+		// Add action Listener to all the buttons created
 		btnRoot = new JButton("√");
 		btnRoot.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -462,9 +541,12 @@ public class calculator {
 		btnRoot.setBounds(149, 266, 71, 49);
 		frame.getContentPane().add(btnRoot);
 		
+		// Add action Listener to all the buttons created
 		btnC = new JButton("C");
 		btnC.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+
+				// Clear the input in the big display field
 				textField.setText(null);
 			}
 		});
